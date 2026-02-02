@@ -2,6 +2,23 @@
     <html lang="en">
         <head>
             <title>Marks Table</title>
+            <style>
+                table, tr, th, td {
+                    border: 3px solid rgb(97, 134, 221);
+                    border-collapse: collapse;
+                    text-align: center;
+                    margin: auto auto;
+                }
+
+                td {
+                    padding:  10px;
+                }
+
+                #highest {
+                    background-color: yellow;
+                    color: red;
+                }
+            </style>
         </head>
 
         <body>
@@ -12,7 +29,7 @@
                 <tr><td rowspan="2">50</td><td>Peter</td></tr>
                 <tr><td>John</td></tr>
                 <tr><td>70</td><td>Jack</td></tr>
-                <tr><td>85</td><td>Ann</td></tr>
+                <tr><td>85</td><td id="highest">Ann</td></tr>
             </table>
         </body>
     </html>
