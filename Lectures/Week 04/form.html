@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+</head>
+<body>
+    <form name="personal_info">
+        <label for="first_name">First Name:</label>
+        <input type="text" name="firstname" id="first_name" placeholder="Enter your name">
+        <br>
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" placeholder="Enter your age" min="18" max="35">
+        <br>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email">
+        <br>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" placeholder="Enter your password">
+        <br>
+        
+        <br>
+        <label for="parttime">Part Time:</label>
+        <input type="radio" name="modes" id="parttime">
+        <label for="fulltime">Full Time:</label>
+        <input type="radio" name="modes" id="fulltime">
+        <br>
+        <br>
+        <label for="course">Course:</label>
+        <select name="course" id="course">
+            <option value="web">Web Development</option>
+            <option value="app">App Development</option>
+            <option value="data">Data Science</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+        
+
+    </form>
+</body>
+</html>
