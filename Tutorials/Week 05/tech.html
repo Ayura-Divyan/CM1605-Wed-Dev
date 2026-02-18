@@ -6,6 +6,66 @@
     <title>Tech Club Registration</title>
 </head>
 <body>
+    <header>
+        <h1>Tech Club Registration</h1>
+    </header>
+    <main>
+        <section id="required-fields"></section>
+        <form name="tech_club" method="post">
+            <label for="full_name">
+                Full Name *:
+            </label>
+                <input type="text" id="full_name" name="full_name" required>
+            <br><br>
+            <label for="email">
+                Email *:
+            </label>
+                <input type="email" id="email" name="email" required>
+            <br><br>
+            <label for="password">
+                Password *:
+            </label>
+                <input type="password" id="password" name="password" required>
+            <br><br>
+            <label for="gender">
+                Gender* :
+            </label>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="other" required>
+                <label for="other">Other</label>
+            <br><br>
+            <label for="year_study">
+                Year of Study *:
+            </label>
+                <select id="year_study" name="year_study" required>
+                    <option value="">Select Year</option>
+                    <option value="1">1st Year</option>
+                    <option value="2">2nd Year</option>
+                    <option value="3">3rd Year</option>
+                    <option value="4">4th Year</option>
+                </select>
+            <br><br>
+            <label for="skills">
+                Skills *:
+            </label>
+                <input type="checkbox" id="programming" name="skills" value="programming" required>
+                <label for="programming">Programming</label>
+                <input type="checkbox" id="web_development" name="skills" value="web_development" required>
+                <label for="web_development">Web Development</label>
+                <input type="checkbox" id="data_science" name="skills" value="data_science" required>
+                <label for="data_science">Data Science</label>
+            <br><br>
+            <label for="profile-picture">
+                Profile Picture:
+            </label>
+                <input type="file" id="profile-picture" name="profile-picture">
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </main>
     
 </body>
 </html>
