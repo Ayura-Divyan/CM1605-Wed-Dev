@@ -1,0 +1,39 @@
+body {
+    background-color: rgba(35, 44, 66, 0.874);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: center; /* Aligns horizontally */
+    align-items: center;     /* Aligns vertically */
+    height: 60px;            /* Optional: gives it space to center vertically */
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* This forces the side-by-side view */
+    background-color: rgb(35, 44, 66);     /* Dark inner card color */
+    width: 900px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.side-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
