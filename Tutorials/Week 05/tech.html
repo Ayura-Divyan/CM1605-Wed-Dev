@@ -21,12 +21,12 @@
             <label for="email">
                 Email *:
             </label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" pattern=".+@iit\.ac\.lk" title="Email must end with @iit.ac.lk" required >
             <br><br>
             <label for="password">
                 Password *:
             </label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required minlength="8">
             <br><br>
             <label for="gender">
                 Gender:
@@ -52,11 +52,11 @@
             <label for="skills">
                 Skills:
             </label>
-                <input type="checkbox" id="programming" name="skills" value="programming" required>
+                <input type="checkbox" id="programming" name="skills" value="programming">
                 <label for="programming">Programming</label>
-                <input type="checkbox" id="web_development" name="skills" value="web_development" required>
+                <input type="checkbox" id="web_development" name="skills" value="web_development">
                 <label for="web_development">Web Development</label>
-                <input type="checkbox" id="data_science" name="skills" value="data_science" required>
+                <input type="checkbox" id="data_science" name="skills" value="data_science">
                 <label for="data_science">Data Science</label>
             <br><br>
             <label for="profile-picture">
