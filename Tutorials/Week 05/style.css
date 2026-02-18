@@ -1,39 +1,214 @@
 body {
-    background-color: rgba(35, 44, 66, 0.874);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(35, 44, 66, 0.923);
+    background: radial-gradient(circle at center, #2e3b5e 0%, #171d2b 100%);
     min-height: 100vh;
-    font-family: 'Inter', sans-serif;
-    color: white;
+    margin: 0;
 }
 
 header {
     display: flex;
-    justify-content: center; /* Aligns horizontally */
-    align-items: center;     /* Aligns vertically */
-    height: 60px;            /* Optional: gives it space to center vertically */
-}
-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* This forces the side-by-side view */
-    background-color: rgb(35, 44, 66);     /* Dark inner card color */
-    width: 900px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.side-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    font-family: 'Unbounded', sans-serif;
+    color: rgba(255, 255, 255, 0.814);
+    text-shadow: 0 0 5px rgba(35, 44, 66, 0.8);
 }
 
+/* 1. The Container */
+main {
+    display: grid;
+    /* Define two equal columns */
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    max-width: 1900px;
+    margin: 40px auto;
+    background-color: #232c4234;
+    backdrop-filter: blur(20px);
+    padding: 10px;
+    border-radius: 12px;
+    align-items: start;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 0.5px solid #41516b;
+    font-size: larger;
+}
+
+/* 2. The Image (Stays in Column 1) */
+.side-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    /* Optional: Ensure it spans the full height if the form is long */
+    grid-row: 1 / 3; 
+}
+
+/* This changes the inner circle of the radio buttons to purple */
+input[type="radio"] {
+    accent-color: #6c5ce7;
+    transform: scale(1.2); /* Makes them slightly larger and easier to click */
+    margin-right: 5px;     /* Adds space between the button and the text */
+    vertical-align: middle;
+}
+
+/* Optional: Styling the labels so they look better next to the buttons */
+label[for="male"], 
+label[for="female"], 
+label[for="other"] {
+    color: #ffffff;
+    font-size: 0.95rem;
+    margin-right: 15px; /* Spaces out the 'Male', 'Female', 'Other' options */
+    cursor: pointer;
+}
+
+/* 3. The "Ghost" Section Fix */
+/* This is the magic trick: display: contents makes the browser 
+   act as if the <section> tag doesn't exist for layout purposes */
+#required-fields {
+    display: contents;
+}
+
+/* 4. The Form (Forces it into Column 2) */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    grid-column: 2; /* Explicitly puts the form in the second column */
+    color: white;
+    font-family: sans-serif;
+}
+
+select#year_study {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: rgba(255, 255, 255, 0.05); /* Slight transparent glow */
+    color: #ffffff;
+    border: 1px solid #4a5568;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    appearance: none; /* Removes the default arrow to add a custom one */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    transition: all 0.3s ease;
+}
+
+/* Hover and Focus states */
+select#year_study:hover {
+    border-color: #6c5ce7; /* Purple highlight */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+select#year_study:focus {
+    outline: none;
+    border-color: #a29bfe;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+}
+
+/* Styling the options (Limited support, but works for colors) */
+select#year_study option {
+    background-color: #232c42; /* Matches your background color */
+    color: white;
+    padding: 10px;
+}
+
+/* Style for the 'Select Year' placeholder */
+select#year_study option[value=""] {
+    color: #a1a1a1;
+}
+
+/* 5. Styling inputs to match your image reference */
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+select {
+    width: 100%; /* Makes them fill the column width */
+    padding: 10px;
+    margin-top: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #4a5568;
+    border-radius: 4px;
+    color: white;
+    box-sizing: border-box; /* Prevents padding from breaking width */
+}
+
+/* Target the input type file */
+input[type="file"] {
+    background: rgba(255, 255, 255, 0.05); /* Slight transparent glow */
+    border: 1px dashed #4a5568;         /* Dashed border looks better for uploads */
+    padding: 8px;
+    border-radius: 6px;
+    color: #a1a1a1;                     /* Color of the 'No file chosen' text */
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Style the actual "Choose File" button inside the input */
+input[type="file"]::file-selector-button {
+    background-color: #6c5ce7;          /* The purple from your image */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 15px;                 /* Space between button and filename */
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+/* Add a hover effect for that 'pro' feel */
+input[type="file"]::file-selector-button:hover {
+    background-color: #5849c4;          /* Slightly darker purple on hover */
+}
+
+/* Focus state for accessibility */
+input[type="file"]:focus {
+    outline: 2px solid #6c5ce7;
+    outline-offset: 2px;
+}
+
+#submit-button {
+    /* 1. Reset & Layout */
+    display: block;
+    width: 100%;
+    padding: 14px 24px;
+    margin-top: 25px;
+    border: none;
+    outline: none;
+    
+    /* 2. Colors & Gradient */
+    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    color: #ffffff;
+    
+    /* 3. Typography */
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    
+    /* 4. Shape & Shadow */
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+    
+    /* 5. Smooth Transitions */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Hover State: The button grows and glows more */
+#submit-button:hover {
+    background: linear-gradient(135deg, #5849c4 0%, #8e85ee 100%);
+    box-shadow: 0 12px 25px rgba(108, 92, 231, 0.6);
+    transform: translateY(-3px);
+}
+
+/* Active State: The "pressed" effect */
+#submit-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3);
+}
+
+.required-field {
+    color: #ff4d4d;
+    margin-left: 3px;
 }
