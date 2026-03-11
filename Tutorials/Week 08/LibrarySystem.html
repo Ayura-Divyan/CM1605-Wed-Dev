@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Book = {
+            title: "Green yuri manga",
+            author: "Arai Sumiko",
+            price: 984165416,
+            copiesAvailable: 6546465
+        }
+
+        function borrowBook(copiesAvailable, quantity) {
+            if (copiesAvailable >= quantity) {
+                copiesAvailable -= quantity
+                return copiesAvailable
+            }
+
+            return "Not enough copies available"
+        }
+
+        function calculateCost(price, quantity) {
+            let cost = price * quantity
+            return cost
+        }
+
+        function showBookDetails(book) {
+            console.log(Book.title)
+            console.log(Book.author)
+            console.log(Book.copiesAvailable)
+        }
+    </script>
+</body>
+</html>
