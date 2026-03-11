@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        let Account = {
+            owner:  "David",
+            balance: 1200
+        }
+
+        function deposit(balance, amount) {
+            Account.balance = Account.balance + amount
+            console.log("Balance: " + Account.balance)
+            return Account.balance
+        }
+
+        function withdraw(balance, amount) {
+            if (balance >= amount) {
+                Account.balance = Account.balance - amount
+                console.log("Balance: " + Account.balance)
+                return Account.balance
+            } 
+            
+            return "Insufficient funds"
+        }
+
+        function showAccountDetails(account) {
+            console.log("Account Owner: " + Account.owner + "\nCurrent Balance: " + Account.balance)
+        }
+
+    </script>
+    <title>Tutorial 07</title>
+</head>
+<body>
+    
+</body>
+</html>
